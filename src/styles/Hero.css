@@ -1,0 +1,44 @@
+.hero-container {
+  background-color: #f2f2f2; /* Grey background */
+  padding: 40px; /* Adjust the padding as needed */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  flex: 1;
+  padding-right: 20px; /* Adjust the spacing between text and image */
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.reserve-button {
+  background-color: #333; /* Button color */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.reserve-button:hover {
+  background-color: #555; /* Button color on hover */
+}
+
+.hero-image img {
+  width: 100%; /* Make sure the image takes the full width of the container */
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+}

@@ -1,0 +1,46 @@
+.testimonials-container {
+  background-color: #f9f9f9;
+  padding: 40px;
+}
+
+.rating span {
+  color: #f4ce14; /* Primary color */
+}
+
+.testimonials-container {
+  background-color: #f9f9f9; /* Background color to separate from previous section */
+  padding: 40px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.testimonial-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.rating {
+  margin-bottom: 10px;
+}
+
+.rating span {
+  margin-right: 4px;
+  color: #f8d64e; /* Yellow color for star */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

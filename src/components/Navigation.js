@@ -1,21 +1,30 @@
+import React from 'react';
+import { Link } from 'react-router-dom'; // Import the Link component
+
 function Navigation() {
   return (
     <nav className="navigation">
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/services">Services</a>
-        </li>
-        <li>
-          <a href="/contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
+    <ul>
+      <li>
+        <Link to="/">Home</Link> {/* Use Link instead of a */}
+      </li>
+      <li>
+        <Link to="/">About</Link>
+      </li>
+      <li>
+        <Link to="/">Menu</Link>
+      </li>
+      <li>
+        <Link to="/booking">Reservations</Link>
+      </li>
+      <li>
+        <Link to="/">Order Online</Link>
+      </li>
+      <li>
+        <Link to="/">Login</Link>
+      </li>
+    </ul>
+  </nav>
   );
 }
 

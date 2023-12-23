@@ -5,6 +5,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  animation: App-logo-spin infinite 20s linear; /* Move the animation outside of media query */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #495e57; /* Primary color */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +26,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #f4ce14; /* Primary color */
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +36,65 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Common text styles */
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+/* Display Title */
+.display-title {
+  font-family: 'Markazi Text', serif;
+  font-weight: medium;
+  font-size: 64px;
+}
+
+/* Sub Title */
+.sub-title {
+  /* Keep close to display */
+}
+
+/* Regular text */
+.regular-text {
+  font-size: 40px;
+}
+
+/* Lead text */
+.lead-text {
+  font-size: 18px;
+  font-weight: medium;
+}
+
+/* Section Title */
+.section-title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Specials Section Categories */
+.specials-categories {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Card Title */
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Paragraph text regular */
+.paragraph-text {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 65ch;
+}
+
+/* Highlight text */
+.highlight-text {
+  font-size: 16px;
+  font-weight: medium;
+  color: #f4ce14; /* Primary color */
 }
