@@ -7,6 +7,7 @@ const TimeOption = ({ time, isSelected, onClick }) => {
     <div
       className={`time-option ${isSelected ? 'selected' : ''}`}
       onClick={() => onClick(time)}  // Pass a function reference
+      aria-label="On Click"
     >
       {time}
     </div>
@@ -15,34 +16,66 @@ const TimeOption = ({ time, isSelected, onClick }) => {
 
 const ReservationForm = ({ availableTimes = [], onDateChange, selectedDate, isLoading }) => {
   const [reservationDate, setReservationDate] = useState(selectedDate);
-  const [reservationTime, setReservationTime] = useState('17:00');
+  const [reservationTime, setReservationTime] = useState('');
   const [numOfGuests, setNumOfGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
 
+  // Update handleDateChange function to handle date validation
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
-    setReservationDate(selectedDate);
-    onDateChange(selectedDate);
+  
+    // Validate if the date is a valid date
+    const isValidDate = isValidDateInput(selectedDate);
+  
+    if (isValidDate) {
+      setReservationDate(selectedDate);
+      onDateChange(selectedDate);
+    } else {
+      // Handle invalid date (you can show an error message or take other actions)
+      console.error('Invalid date selected');
+    }
   };
+
+const isValidDateInput = (dateString) => {
+  const regex = /^\d{4}-\d{2}-\d{2}$/; // Assuming YYYY-MM-DD format
+
+  if (!regex.test(dateString)) {
+    return false;
+  }
+
+  const date = new Date(dateString);
+  return !isNaN(date.getTime());
+};
 
   const handleTimeChange = (e) => {
     setReservationTime(e);
   };
 
-  const handleNumOfGuestsChange = (e) => {
-    setNumOfGuests(e.target.value);
-  };
+  // Update handleNumOfGuestsChange function to handle numeric validation
+const handleNumOfGuestsChange = (e) => {
+  const value = e.target.value;
+  // Validate if the value is a positive integer
+  if (/^[1-9]\d*$/.test(value) || value === '') {
+    setNumOfGuests(value);
+  }
+};
 
-  const handleOccasionChange = (e) => {
-    setOccasion(e.target.value);
-  };
+// Add event listener to handle changes in occasion dropdown
+const handleOccasionChange = (e) => {
+  setOccasion(e.target.value);
+};
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = { date: reservationDate, reservationTime, numOfGuests, occasion };
     console.log('Form submitted:', formData);
     // Add logic for form submission or API communication here
-    submitAPI(formData).then(alert('success booking')).catch(alert('failed booking'))
+    submitAPI(formData).then(alert('success booking')).catch(console.log('Unexpected issue while submiting, please refer to our support team'))
+  };
+
+  const isTimeSelected = () => {
+    // Check if selectedDate is truthy and reservationTime is not an empty string
+    return selectedDate && reservationTime !== '';
   };
 
   return (
@@ -86,6 +119,7 @@ const ReservationForm = ({ availableTimes = [], onDateChange, selectedDate, isLo
         id="guests"
         value={numOfGuests}
         onChange={handleNumOfGuestsChange}
+        required  // This makes the field required
       />
 
       <label htmlFor="occasion">Occasion</label>
@@ -101,6 +135,8 @@ const ReservationForm = ({ availableTimes = [], onDateChange, selectedDate, isLo
       <input
         type="submit"
         value="Make Your reservation"
+        disabled={!selectedDate || !reservationTime || !numOfGuests || !occasion || !isTimeSelected()}
+        className={(!selectedDate || !reservationTime || !numOfGuests || !occasion || !isTimeSelected()) ? 'disabled' : ''}
       />
     </form>
     </>

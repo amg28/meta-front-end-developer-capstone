@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Add margin at the bottom */
 }
 
 h2 {
@@ -28,14 +28,17 @@ h2 {
 
 .highlights-scroll-container {
   display: flex;
-  overflow-x: auto;
+  justify-content: center;
+  gap: 20px; /* Adjust as needed */
+  flex-wrap: wrap; /* Wrap items onto the next line if they don't fit */
 }
 
 .highlight-card {
   width: 300px;
-  margin-right: 20px;
+  margin-bottom: 20px; /* Add some spacing between cards */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  overflow: hidden; /* Hide overflowing content */
 }
 
 .highlight-card img {
@@ -68,4 +71,19 @@ h2 {
 .order-delivery:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.highlights-title {
+  font-size: 24px;
+  margin-left: 50px; /* Add margin to the right of the title */
+}
+
+.online-menu-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 50px; /* Add margin to the left of the button */
 }

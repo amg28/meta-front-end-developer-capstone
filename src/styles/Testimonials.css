@@ -1,15 +1,7 @@
+/* Testimonials.css */
 .testimonials-container {
-  background-color: #f9f9f9;
-  padding: 40px;
-}
-
-.rating span {
-  color: #f4ce14; /* Primary color */
-}
-
-.testimonials-container {
-  background-color: #f9f9f9; /* Background color to separate from previous section */
-  padding: 40px;
+  background-color: #f9f9f9; /* Original background color */
+  padding: 2rem; /* Responsive padding */
 }
 
 .testimonials-grid {
@@ -43,4 +35,22 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.testimonials-container {
+  background-color: #f9f9f9; /* Original background color */
+  padding: 2rem; /* Responsive padding */
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Adjust columns for mobile view */
+  gap: 20px;
+}
+
+/* Add a media query for mobile view */
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr); /* Restore columns for desktop view */
+  }
 }

@@ -1,50 +1,15 @@
-.about-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
-  background-color: #fbdabb; /* Secondary color */
-}
-
-.about-text h2 {
-  font-size: 40px; /* Update to 40pt */
-}
-
-/* HighlightsSection.css */
-.highlights-container {
-  margin: 40px 0;
-  background-color: #ededee; /* Secondary color */
-}
-
-.highlights-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 20px; /* Update to 20pt extra bold */
-}
-
-.online-menu-button {
-  background-color: #333; /* Primary color */
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.online-menu-button:hover {
-  background-color: #555;
+:root {
+  --primary-color: #333;
+  --secondary-color: #fbdabb;
+  --extra-bold-font-size: 20px;
 }
 
 .about-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
+  padding: 2rem; /* Desktop padding */
+  background-color: var(--secondary-color);
 }
 
 .about-text {
@@ -52,31 +17,42 @@ h2 {
 }
 
 .about-text h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .about-images {
   position: relative;
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .about-images img {
   max-height: 100%;
-  max-width: 100%;
   border-radius: 8px;
-}
-
-.image1 {
-  position: absolute;
-  top: 20px;
-  right: 20px;
 }
 
 .image2 {
   position: relative;
   margin-top: 20px;
   margin-right: -20px;
+  max-width: 400px;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; /* Adjusted padding for mobile */
+  }
+
+  .about-images {
+    margin-top: 20px; /* Adjusted margin for separation */
+  }
+
+  .about-images img {
+    max-width: 100%; /* Make the image responsive */
+  }
 }

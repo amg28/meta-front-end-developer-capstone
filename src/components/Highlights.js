@@ -14,7 +14,7 @@ function Highlights() {
         {
           id: 2,
           name: 'Special Dish 2',
-          description: 'Exquisite blend of ingredients for a memorable taste.',
+          description: 'Exquisite blend of ingredients for a taste.',
           price: '$18.99',
           imageUrl: '/assets/special-dish-2.jpg',
         },
@@ -28,14 +28,14 @@ function Highlights() {
       ];
 
     return (
-        <div className="highlights-container">
+        <section className="highlights-container">
       <div className="highlights-header">
-        <h2>Specials</h2>
-        <button className="online-menu-button">Online Menu</button>
+        <h2 className="highlights-title">Specials</h2>
+        <button className="online-menu-button" aria-label="View Online Menu">Online Menu</button>
       </div>
       <div className="highlights-scroll-container">
         {specials.map((special) => (
-          <div key={special.id} className="highlight-card">
+          <article key={special.id} className="highlight-card">
             <img src={special.imageUrl} alt={special.name} />
             <div className="highlight-details">
               <div className="highlight-name">{special.name}</div>
@@ -50,10 +50,10 @@ function Highlights() {
                 </strong>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
   }
   export default Highlights;

@@ -67,3 +67,8 @@
     }
   }
   
+/* Add this style to your CSS file */
+.reservation-form input[type="submit"]:disabled {
+  background-color: #d3d3d3; /* Change the color to a suitable disabled color */
+  cursor: not-allowed;
+}

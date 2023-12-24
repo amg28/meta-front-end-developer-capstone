@@ -1,17 +1,21 @@
+import { Link } from 'react-router-dom';
 import './../styles/Footer.css';
 
 function Footer() {
-    return (
-      <footer className="footer">
+  return (
+    <footer className="footer">
       <div className="footer-column">
-        <img src="/Logo.svg" alt="Logo" className="footer-logo" />
+        <img src="/assets/about-image2.jpg" alt="Logo" className="footer-logo" />
       </div>
       <div className="footer-column">
         <h3>Navigation</h3>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/menu">Menu</Link></li>
+          <li><Link to="/booking">Reservations</Link></li>
+          <li><Link to="/order-online">Order Online</Link></li>
+          <li><Link to="/login">Login</Link></li>
         </ul>
       </div>
       <div className="footer-column">
@@ -30,6 +34,7 @@ function Footer() {
         </ul>
       </div>
     </footer>
-    );
-  }
-  export default Footer;
+  );
+}
+
+export default Footer;
