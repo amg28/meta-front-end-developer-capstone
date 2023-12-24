@@ -38,9 +38,16 @@
   }
 }
 
-/* Common text styles */
-body {
+html, body, #root {
+  height: 100%;
+  margin: 0;
   font-family: 'Karla', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
 }
 
 /* Display Title */
